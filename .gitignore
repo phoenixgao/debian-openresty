@@ -1,0 +1,8 @@
+.bzr
+bundle
+patches
+util
+configure
+COPYRIGHT
+README-win32.txt
+README.markdown
