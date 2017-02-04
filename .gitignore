@@ -6,3 +6,4 @@ configure
 COPYRIGHT
 README-win32.txt
 README.markdown
+.bzrignore
