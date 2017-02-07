@@ -1,8 +1,8 @@
 Source: openresty
-Section: main/net
+Section: main/httpd
 Priority: optional
 Maintainer: Xiang Gao <phoenix.x.gao@gmail.com>
-Build-Depends: debhelper (>=9),autotools-dev
+Build-Depends: debhelper (>=9),systemtap-sdt-dev,autotools-dev,libreadline-dev,libncurses5-dev,libpcre3-dev,libssl-dev,perl,libxslt1-dev,libxml2-dev,libgd3,libgd-dev,libgeoip-dev
 Standards-Version: 3.9.6
 Homepage: <insert the upstream URL, if relevant>
 #Vcs-Git: git://anonscm.debian.org/collab-maint/openresty.git
@@ -11,5 +11,4 @@ Homepage: <insert the upstream URL, if relevant>
 Package: openresty
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: Openresty Http Server
- <insert long description, indented with spaces>
+Description: nginx web/proxy server (Openresty version)

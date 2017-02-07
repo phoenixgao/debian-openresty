@@ -1,5 +1,47 @@
+openresty (1.11.2.2-0ubuntu8) xenial; urgency=medium
+
+  * add dtrace
+
+ -- Xiang Gao <phoenix.x.gao@gmail.com>  Tue, 07 Feb 2017 00:25:27 +0000
+
+openresty (1.11.2.2-0ubuntu7) xenial; urgency=medium
+
+  * fix control file
+
+ -- Xiang Gao <phoenix.x.gao@gmail.com>  Mon, 06 Feb 2017 16:38:57 +0000
+
+openresty (1.11.2.2-0ubuntu6) xenial; urgency=medium
+
+  * fix duplicated build-depends
+
+ -- Xiang Gao <phoenix.x.gao@gmail.com>  Mon, 06 Feb 2017 16:14:52 +0000
+
+openresty (1.11.2.2-0ubuntu5) xenial; urgency=medium
+
+  * add depends
+
+ -- Xiang Gao <phoenix.x.gao@gmail.com>  Mon, 06 Feb 2017 15:55:00 +0000
+
+openresty (1.11.2.2-0ubuntu4) xenial; urgency=medium
+
+  * remove auto config
+
+ -- Xiang Gao <phoenix.x.gao@gmail.com>  Mon, 06 Feb 2017 15:06:31 +0000
+
+openresty (1.11.2.2-0ubuntu3) xenial; urgency=medium
+
+  * try again
+
+ -- Xiang Gao <phoenix.x.gao@gmail.com>  Mon, 06 Feb 2017 10:13:49 +0000
+
+openresty (1.11.2.2-0ubuntu2) xenial; urgency=medium
+
+  * add build depends
+
+ -- Xiang Gao <phoenix.x.gao@gmail.com>  Mon, 06 Feb 2017 09:59:39 +0000
+
 openresty (1.11.2.2-0ubuntu1) xenial; urgency=medium
 
-  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * Initial release
 
- -- Xiang Gao <phoenix.x.gao@gmail.com>  Mon, 30 Jan 2017 16:27:00 +0000
+ -- Xiang Gao <phoenix.x.gao@gmail.com>  Sat, 4 Feb 2017 17:31:00 +0000

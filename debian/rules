@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 # See debhelper(7) (uncomment to enable)
 # output every command that modifies files on the build system.
-#export DH_VERBOSE = 1
+export DH_VERBOSE = 1
 
 
 # see FEATURE AREAS in dpkg-buildflags(1)
@@ -12,17 +12,63 @@
 #export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
 # package maintainers to append LDFLAGS
 #export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+DPKG_EXPORT_BUILDFLAGS = 1
+BUILD_DIR=$(CURDIR)/debian/tmp/
 
+include /usr/share/dpkg/default.mk
 
 %:
-	dh $@ -j2 --with-http_v2_module
-	#dh $@  --prefix=/usr/local/openresty/nginx
-
-
+	dh $@ # --parallel # --with autotools-dev
 
 # dh_make generated override targets
 # This is example for Cmake (See https://bugs.debian.org/641051 )
 override_dh_auto_configure:
-	@
+	./configure --prefix=/usr/local/openresty \
+	-j2 \
+	--with-debug \
+	--with-pcre-jit \
+	--with-ipv6 \
+	--with-http_ssl_module \
+	--with-http_stub_status_module \
+	--with-http_realip_module \
+	--with-http_auth_request_module \
+	--with-http_addition_module \
+	--with-http_dav_module \
+	--with-http_geoip_module \
+	--with-http_gunzip_module \
+	--with-http_gzip_static_module \
+	--with-http_image_filter_module \
+	--with-http_v2_module \
+	--with-http_sub_module \
+	--with-http_xslt_module \
+	--with-stream \
+	--with-stream_ssl_module \
+	--with-mail \
+	--with-mail_ssl_module \
+	--with-http_secure_link_module \
+	--with-http_random_index_module \
+	--with-http_degradation_module \
+	--with-http_slice_module \
+	--with-http_flv_module \
+	--with-http_mp4_module \
+	--with-threads \
+	--with-file-aio \
+	--with-dtrace-probes \
+	--with-luajit-xcflags='-DLUAJIT_NUMMODE=2 -DLUAJIT_ENABLE_LUA52COMPAT' \
+	--with-cc-opt='-g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2' \
+	--with-ld-opt='-Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now'
+
 #	dh_auto_configure -- #	-DCMAKE_LIBRARY_PATH=$(DEB_HOST_MULTIARCH)
 
+# override_dh_auto_install:
+# 	make install DESTDIR=${BUILD_DIR}
+# 	mkdir -p $(CURDIR)/debian/nginx-openresty/usr/sbin
+# 	mkdir -p $(CURDIR)/debian/nginx-openresty/usr/share/nginx/
+# 	mkdir -p $(CURDIR)/debian/nginx-openresty/usr/share/man/man8/
+# 	cp $(CURDIR)/build/nginx-$(NGINX_VERSION)/docs/man/nginx.8 $(CURDIR)/debian/nginx-openresty/usr/share/man/man8/
+# 	gzip -9 $(CURDIR)/debian/nginx-openresty/usr/share/man/man8/nginx.8
+# 	cp ${BUILD_DIR}/usr/share/nginx/nginx/sbin/nginx $(CURDIR)/debian/nginx-openresty/usr/sbin
+# 	cp -r ${BUILD_DIR}/usr/share/nginx/* $(CURDIR)/debian/nginx-openresty/usr/share/nginx/
+#
+# override_dh_auto_clean:
+# 	rm -rf $(CURDIR)/build $(CURDIR)/Makefile
