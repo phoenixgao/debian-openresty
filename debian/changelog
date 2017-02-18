@@ -1,3 +1,21 @@
+openresty (1.11.2.2-0ubuntu11) xenial; urgency=medium
+
+  * add init file
+
+ -- Xiang Gao <phoenix.x.gao@gmail.com>  Sat, 18 Feb 2017 14:05:27 +0000
+
+openresty (1.11.2.2-0ubuntu10) xenial; urgency=medium
+
+  * add nginx conf
+
+ -- Xiang Gao <phoenix.x.gao@gmail.com>  Sat, 18 Feb 2017 12:59:45 +0000
+
+openresty (1.11.2.2-0ubuntu9) xenial; urgency=medium
+
+  * change install dir
+
+ -- Xiang Gao <phoenix.x.gao@gmail.com>  Sat, 18 Feb 2017 09:54:19 +0000
+
 openresty (1.11.2.2-0ubuntu8) xenial; urgency=medium
 
   * add dtrace

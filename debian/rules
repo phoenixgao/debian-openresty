@@ -23,7 +23,7 @@ include /usr/share/dpkg/default.mk
 # dh_make generated override targets
 # This is example for Cmake (See https://bugs.debian.org/641051 )
 override_dh_auto_configure:
-	./configure --prefix=/usr/local/openresty \
+	./configure --prefix=/usr/lib/openresty \
 	-j2 \
 	--with-debug \
 	--with-pcre-jit \
@@ -56,7 +56,18 @@ override_dh_auto_configure:
 	--with-dtrace-probes \
 	--with-luajit-xcflags='-DLUAJIT_NUMMODE=2 -DLUAJIT_ENABLE_LUA52COMPAT' \
 	--with-cc-opt='-g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2' \
-	--with-ld-opt='-Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now'
+	--with-ld-opt='-Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now' \
+	--sbin-path=/usr/sbin/nginx \
+	--conf-path=/etc/nginx/nginx.conf \
+	--http-log-path=/var/log/nginx/access.log \
+	--error-log-path=/var/log/nginx/error.log \
+	--lock-path=/var/lock/nginx.lock \
+	--pid-path=/run/nginx.pid \
+	--http-client-body-temp-path=/var/lib/nginx/body \
+	--http-fastcgi-temp-path=/var/lib/nginx/fastcgi \
+	--http-proxy-temp-path=/var/lib/nginx/proxy \
+	--http-scgi-temp-path=/var/lib/nginx/scgi \
+	--http-uwsgi-temp-path=/var/lib/nginx/uwsgi
 
 #	dh_auto_configure -- #	-DCMAKE_LIBRARY_PATH=$(DEB_HOST_MULTIARCH)
 
