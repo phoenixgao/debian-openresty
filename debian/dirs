@@ -1,0 +1,6 @@
+var/lib/nginx
+var/www/html
+etc/nginx/conf.d
+etc/nginx/sites-available
+etc/nginx/sites-enabled
+etc/nginx/snippets

@@ -12,6 +12,7 @@
 
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 DAEMON=/usr/sbin/nginx
+SERVICENAME=openresty
 NAME=nginx
 DESC=nginx
 
@@ -190,7 +191,7 @@ case "$1" in
 		log_end_msg $?
 		;;
 	*)
-		echo "Usage: $NAME {start|stop|restart|reload|force-reload|status|configtest|rotate|upgrade}" >&2
+		echo "Usage: $SERVICENAME {start|stop|restart|reload|force-reload|status|configtest|rotate|upgrade}" >&2
 		exit 3
 		;;
 esac

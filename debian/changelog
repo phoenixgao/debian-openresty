@@ -1,3 +1,45 @@
+openresty (1.11.2.2-0ubuntu18) xenial; urgency=medium
+
+  * default html
+
+ -- Xiang Gao <phoenix.x.gao@gmail.com>  Sun, 26 Feb 2017 13:45:04 +0000
+
+openresty (1.11.2.2-0ubuntu17) xenial; urgency=medium
+
+  * try fix bzr
+
+ -- Xiang Gao <phoenix.x.gao@gmail.com>  Sun, 26 Feb 2017 05:55:53 +0000
+
+openresty (1.11.2.2-0ubuntu16) xenial; urgency=medium
+
+  * fix path
+
+ -- Xiang Gao <phoenix.x.gao@gmail.com>  Sun, 19 Feb 2017 05:54:10 +0000
+
+openresty (1.11.2.2-0ubuntu15) xenial; urgency=medium
+
+  * conf files
+
+ -- Xiang Gao <phoenix.x.gao@gmail.com>  Sun, 19 Feb 2017 04:36:21 +0000
+
+openresty (1.11.2.2-0ubuntu14) xenial; urgency=medium
+
+  * change nginx cache path
+
+ -- Xiang Gao <phoenix.x.gao@gmail.com>  Sat, 18 Feb 2017 15:36:21 +0000
+
+openresty (1.11.2.2-0ubuntu13) xenial; urgency=medium
+
+  * change nginx cache path
+
+ -- Xiang Gao <phoenix.x.gao@gmail.com>  Sat, 18 Feb 2017 15:07:03 +0000
+
+openresty (1.11.2.2-0ubuntu12) xenial; urgency=medium
+
+  * fix init file
+
+ -- Xiang Gao <phoenix.x.gao@gmail.com>  Sat, 18 Feb 2017 14:33:15 +0000
+
 openresty (1.11.2.2-0ubuntu11) xenial; urgency=medium
 
   * add init file
