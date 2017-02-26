@@ -38,6 +38,8 @@ case "$1" in
             cp /usr/lib/openresty/nginx/html/50x.html /var/www/html/50x.html
         fi
 
+        update-rc.d openresty defaults >/dev/null
+
         ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
@@ -49,16 +51,16 @@ case "$1" in
         ;;
 esac
 
-for confpair in #NAMES# ; do
-	from=$(echo $confpair | cut -d: -f1)
-	to=$(echo $confpair | cut -d: -f2)
+# for confpair in #NAMES# ; do
+	# from=$(echo $confpair | cut -d: -f1)
+	# to=$(echo $confpair | cut -d: -f2)
 
 	# Symlink on fresh installations
 	# if [ -z "$2" ]; then
 	#	  ln -sf /usr/share/nginx/modules-available/$from \
 	#		/etc/nginx/modules-enabled/$to
 	# fi
-done
+# done
 
 if [ -s /run/nginx.pid ]; then
 	nginx -s reload

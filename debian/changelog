@@ -1,3 +1,15 @@
+openresty (1.11.2.2-0ubuntu20) xenial; urgency=medium
+
+  * add to update-rc.d
+
+ -- Xiang Gao <phoenix.x.gao@gmail.com>  Sun, 26 Feb 2017 15:53:58 +0000
+
+openresty (1.11.2.2-0ubuntu19) xenial; urgency=medium
+
+  * fix bash syntax
+
+ -- Xiang Gao <phoenix.x.gao@gmail.com>  Sun, 26 Feb 2017 14:42:13 +0000
+
 openresty (1.11.2.2-0ubuntu18) xenial; urgency=medium
 
   * default html
